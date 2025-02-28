@@ -1,0 +1,69 @@
+---
+title: "How to Deploy a Website on Cloudflare Pages Using Astro"
+description: "A step-by-step guide on deploying an Astro website to Cloudflare Pages for lightning-fast performance."
+pubDate: "22 Feb, 2025"
+updatedDate: "22 Feb, 2025"
+heroImage: "/deploy-astro.png"
+tags: ["Astro", "Cloudflare Pages", "Web Development", "Static Sites"]
+---
+
+# How to Deploy a Website on Cloudflare Pages Using Astro
+
+Astro is a powerful static site generator designed for speed and flexibility. Cloudflare Pages is a fast, serverless hosting platform perfect for deploying Astro websites. In this guide, you'll learn how to set up and deploy an Astro project on Cloudflare Pages.
+
+## Prerequisites
+Before starting, ensure you have:
+- [**Node.js**](https://nodejs.org) (LTS recommended)
+- [**GitHub account**](https://github.com) (Cloudflare Pages connects with GitHub repositories)
+- [**Cloudflare account**](https://cloudflare.com) (to deploy on Cloudflare Pages)
+
+## Step 1: Create a New Astro Project
+First, set up a new Astro project locally:
+Open cmd, make sure you have [**Node.js**](https://nodejs.org) installed and run these commands below:
+```sh
+npm create astro@latest # follow on screen instructions
+cd my-astro-site
+npm install
+npm run dev
+```
+
+This starts a development server at `http://localhost:3000/` where you can preview your site.
+
+## Step 2: Push Your Code to GitHub
+Initialize a Git repository and push your project to GitHub:
+
+```sh
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/your-username/my-astro-site.git
+git push -u origin main
+```
+
+## Step 3: Set Up Cloudflare Pages
+1. Go to [Cloudflare Pages](https://pages.cloudflare.com/) and log in.
+2. Click **"Create a Project"** and select **"Connect to GitHub"**.
+3. Choose your Astro repository and click **"Begin Setup"**.
+4. Configure build settings:
+   - **Framework:** Astro
+   - **Build command:** `astro build`
+   - **Build output directory:** `dist`
+5. Click **"Save and Deploy"**.
+
+## Step 4: Verify Deployment
+Once the deployment is complete, Cloudflare Pages will provide a unique URL (e.g., `https://your-site.pages.dev`). Open this URL to see your live Astro site!
+
+## Step 5: Optimize for Performance & SEO
+- **Enable Cloudflare Caching**: Go to Cloudflare dashboard → Pages → Settings → Cache settings.
+- **Add a Sitemap**: Install `@astrojs/sitemap` with:
+  ```sh
+  npm install @astrojs/sitemap
+  ```
+  And configure it in `astro.config.mjs`.
+- **Improve SEO**: Use Astro’s built-in `head` component for meta tags.
+
+## Conclusion
+Deploying an Astro site on Cloudflare Pages is simple and provides excellent speed and reliability. Now that your site is live, consider adding content, setting up analytics, and improving SEO.
+
+🚀 Happy coding!
